@@ -1,0 +1,122 @@
+/* 全体のテーマ色 */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f5f5f5;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 中央寄せレイアウト */
+main {
+    max-width: 800px;
+    /* コンテンツ幅の最大サイズ */
+    margin: 0 auto;
+    /* 中央に配置 */
+    padding: 1em 0;
+    /* 上下の余白 */
+}
+
+
+/* h1 スタイル */
+h1 {
+    padding: 0.25em 0.5em;
+    color: #494949;
+    background-color: #f0f7fb;
+    border-left: solid 5px #7db4e6;
+    font-weight: bold;
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    /* ヘッダーとの間に余白を追加 */
+}
+
+/* h2 スタイル */
+h2 {
+    padding: 0.2em 0.4em;
+    color: #555;
+    background-color: #eef6fc;
+    border-left: solid 4px #7db4e6;
+    font-weight: bold;
+    font-size: 1.75em;
+    margin-bottom: 0.4em;
+}
+
+/* リストスタイル */
+ul {
+    padding-left: 1.5em;
+}
+
+li {
+    color: #666;
+}
+
+/* ボタンスタイル */
+button {
+    padding: 0.5em 1em;
+    background-color: #7db4e6;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #639ac7;
+}
+
+/* リンクスタイル */
+a {
+    color: #5687b6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333;
+    /* フッターの背景色: ダークグレー */
+    color: #eee;
+    /* フッターの文字色: ライトグレー */
+    text-align: center;
+    padding: 1em 0;
+    /* 上下の余白 */
+    font-size: 0.9em;
+    margin-top: 2em;
+    /* コンテンツとの間に余白を追加 */
+}
+
+footer p {
+    margin: 0;
+}
+
+footer a {
+    color: #7db4e6;
+    /* フッター内リンクの色: 青 */
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #ffffff;
+    /* ホバー時のリンク色: 白 */
+    text-decoration: underline;
+}
+
+
+/* 全体のレスポンシブ対応 */
+@media (max-width: 768px) {
+    body {
+        font-size: 0.9em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
