@@ -17,6 +17,24 @@ var lyr_2024_0 = new ol.layer.Vector({
     title: '<img src="styles/legend/2024_0.png" /> 塩竈市2024'
 });
 
+var format_2024_1 = new ol.format.GeoJSON();
+var features_2024_1 = format_2024_1.readFeatures(json_2024_1,
+    { dataProjection: 'EPSG:4326', featureProjection: 'EPSG:3857' });
+var jsonSource_2024_1 = new ol.source.Vector({
+    attributions: ' ',
+});
+jsonSource_2024_1.addFeatures(features_2024_1);
+
+var lyr_2024_1 = new ol.layer.Vector({
+    declutter: false,
+    source: jsonSource_2024_1,
+    style: style_2024_1,
+    
+    interactive: true,
+    title: '<img src="styles/legend/2024_1.png" /> 七ヶ浜町2024'
+});
+
+
 var lyr_2020_chiri = new ol.layer.Tile({
     'title': '地理院航空写真（2020年）',
     'type': 'base',
@@ -72,11 +90,21 @@ attributions: ' ',
     })
 });
 
-lyr_default_chiri.setVisible(false); lyr_1961_chiri.setVisible(false); lyr_1974_chiri.setVisible(false); lyr_1984_chiri.setVisible(false); lyr_2020_chiri.setVisible(true); lyr_2024_0.setVisible(true);
-var layersList = [lyr_default_chiri, lyr_1961_chiri, lyr_1974_chiri, lyr_1984_chiri, lyr_2020_chiri, lyr_2024_0];
-lyr_2024_0.set('fieldAliases', { '市区町村コード': '市区町村コード', '大字コード': '大字コード', '丁目コード': '丁目コード', '小字コード': '小字コード', '予備コード': '予備コード', '市区町村名': '市区町村名', '大字名': '大字名', '丁目名': '丁目名', '小字名': '小字名', '予備名': '予備名', });
-lyr_2024_0.set('fieldImages', { '市区町村コード': 'TextEdit', '大字コード': 'TextEdit', '丁目コード': 'TextEdit', '小字コード': 'TextEdit', '予備コード': 'TextEdit', '市区町村名': 'TextEdit', '大字名': 'TextEdit', '丁目名': 'TextEdit', '小字名': 'TextEdit', '予備名': 'TextEdit', });
-lyr_2024_0.set('fieldLabels', { '市区町村コード': 'hidden field', '大字コード': 'hidden field', '丁目コード': 'hidden field', '小字コード': 'hidden field', '予備コード': 'hidden field', '市区町村名': 'hidden field', '大字名': 'inline label', '丁目名': 'inline label', '小字名': 'inline label', '予備名': 'hidden field', });
-lyr_2024_0.on('precompose', function (evt) {
+lyr_default_chiri.setVisible(false);
+lyr_1961_chiri.setVisible(false);
+lyr_1974_chiri.setVisible(false);
+lyr_1984_chiri.setVisible(false);
+lyr_2020_chiri.setVisible(true);
+lyr_2024_0.setVisible(true);
+lyr_2024_1.setVisible(true);
+
+var layersList = [lyr_default_chiri, lyr_1961_chiri, lyr_1974_chiri, lyr_1984_chiri, lyr_2020_chiri, lyr_2024_0, lyr_2024_1];
+lyr_2024_0.set('fieldAliases', { '市区町村コード': '市区町村コード', '大字コード': '大字コード', '丁目コード': '丁目コード', '小字コード': '小字コード', '予備コード': '予備コード', '市区町村名': '市区町村名', '大字名': '大字名', '丁目名': '丁目名', '小字名': '小字名', '備考': '備考', });
+lyr_2024_0.set('fieldImages', { '市区町村コード': 'TextEdit', '大字コード': 'TextEdit', '丁目コード': 'TextEdit', '小字コード': 'TextEdit', '予備コード': 'TextEdit', '市区町村名': 'TextEdit', '大字名': 'TextEdit', '丁目名': 'TextEdit', '小字名': 'TextEdit', '備考': 'TextEdit', });
+lyr_2024_0.set('fieldLabels', { '市区町村コード': 'hidden field', '大字コード': 'hidden field', '丁目コード': 'hidden field', '小字コード': 'hidden field', '予備コード': 'hidden field', '市区町村名': 'hidden field', '大字名': 'inline label', '丁目名': 'inline label', '小字名': 'inline label', '備考': 'inline label', });
+lyr_2024_1.set('fieldAliases', { '市区町村C': '市区町村C', '大字コード': '大字コード', '丁目コード': '丁目コード', '小字コード': '小字コード', '予備コード': '予備コード', '市区町村名': '市区町村名', '大字名': '大字名', '丁目名': '丁目名', '小字名': '小字名', '備考': '備考', });
+lyr_2024_1.set('fieldImages', { '市区町村C': 'TextEdit', '大字コード': 'TextEdit', '丁目コード': 'TextEdit', '小字コード': 'TextEdit', '予備コード': 'TextEdit', '市区町村名': 'TextEdit', '大字名': 'TextEdit', '丁目名': 'TextEdit', '小字名': 'TextEdit', '備考': 'TextEdit', });
+lyr_2024_1.set('fieldLabels', { '市区町村C': 'hidden field', '大字コード': 'hidden field', '丁目コード': 'hidden field', '小字コード': 'hidden field', '予備コード': 'hidden field', '市区町村名': 'hidden field', '大字名': 'inline label', '丁目名': 'inline label', '小字名': 'inline label', '備考': 'inline label', });
+lyr_2024_1.on('precompose', function (evt) {
     evt.context.globalCompositeOperation = 'normal';
 });
